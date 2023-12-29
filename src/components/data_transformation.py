@@ -5,7 +5,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 
 import sys,os
-from dataclasses import dataclass
+from dataclasses import data
 import pandas as pd
 import numpy as np
 
@@ -42,7 +42,7 @@ class DataTransformation:
             ## Numerical Pipeline
             num_pipeline=Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='median'))
+                    ('imputer',SimpleImputer(strategy='median')),
                     ('scaler',StandardScaler())
                 ]
             )   
