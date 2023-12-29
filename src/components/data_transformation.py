@@ -5,7 +5,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 
 import sys,os
-from dataclasses import data
+from dataclasses import dataclass
 import pandas as pd
 import numpy as np
 
