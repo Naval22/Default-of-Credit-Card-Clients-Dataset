@@ -1,4 +1,4 @@
-from  sklearn.impute import SimpleImputer # Handing missing value
+from sklearn.impute import SimpleImputer # Handing missing value
 from sklearn.preprocessing import StandardScaler # scaling  data
 ## pipelines
 from sklearn.pipeline import Pipeline
@@ -97,7 +97,8 @@ class DataTransformation:
             test_arr = np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
             save_object(
-                file_path = self.data_transformation_config.preprocessor_obj_file_path
+                file_path = self.data_transformation_config.preprocessor_obj_file_path,
+                obj=preprocessing_obj
 
             )
 

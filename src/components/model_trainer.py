@@ -7,8 +7,8 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from src.logger import logging
 from src.exception import CustomException
-# from src.utils import save_object
-# from src.utils import evaluate_model
+from src.utils import save_object
+from src.utils import evaluate_model
 
 from dataclasses import dataclass
 
@@ -25,7 +25,7 @@ class ModelTrainer:
 
     def initate_model_training(self,train_array,test_array):
         try:
-            log.info('splitting Dependent and independent feature')
+            logging.info('splitting Dependent and independent feature')
             X_train,y_train,X_test,y_test = (
                 train_array[:,:-1],
                 train_array[:,-1],

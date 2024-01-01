@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
 ## initialize the data ingestion configuration
 
 @dataclass
@@ -36,7 +37,7 @@ class DataIngestion:
             train_set,test_set = train_test_split(df,test_size=0.30,random_state=42)
 
             train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
-            test_set.to_csv(self.ingestion_config.test_data_path_data_path,index=False,header=True)
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
             logging.info('Ingestion of data is completed')
 
@@ -46,3 +47,7 @@ class DataIngestion:
             )
         except Exception as e:
             logging.info("Error occured in data Ingestion config")
+            raise CustomException(e,sys)
+        
+
+
